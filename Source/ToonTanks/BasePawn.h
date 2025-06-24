@@ -18,6 +18,7 @@ public:
 protected:
 
 	void RotateTurret(FVector LookAtTarget);
+	void Fire();
 
 private:
 	UPROPERTY(VisibleAnywhere, BlueprintReadOnly, Category = "Components", meta = (AllowPrivateAccess = "true"))
@@ -41,6 +42,7 @@ private:
 	UPROPERTY(EditAnywhere, BlueprintReadOnly, Category = "Cool stuff",meta = (AllowPrivateAccess = "true"))
 	int32 EditAnywhereInt = 22;
 
-
+	UPROPERTY(EditDefaultsOnly, Category = "Combat")
+	TSubclassOf<class AProjectile> ProjectileClass;
 
 };
