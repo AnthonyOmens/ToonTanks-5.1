@@ -4,7 +4,9 @@
 
 #include "CoreMinimal.h"
 #include "GameFramework/Actor.h"
+#include "GameFramework/ProjectileMovementComponent.h"
 #include "Projectile.generated.h"
+
 
 UCLASS()
 class TOONTANKS_API AProjectile : public AActor
@@ -23,8 +25,14 @@ private:
 	UPROPERTY(EditDefaultsOnly, Category = "Combat")
 	UStaticMeshComponent* ProjectileMesh;
 
+	UPROPERTY(EditAnywhere, Category = "Movement")
+	class UProjectileMovementComponent* ProjectileMovementComponent;
+
+	UFUNCTION()
+	void OnHit(UPrimitiveComponent* HitComp, AActor* OtherActor, UPrimitiveComponent* OtherComp, FVector NormalImpluse, const FHitResult& Hit);
+
 	UPROPERTY(EditAnywhere)
-	class UProjectileMovementComponent* ProjectileMovementComponent; 
+	float Damage = 50.f;
 
 public:	
 	// Called every frame
