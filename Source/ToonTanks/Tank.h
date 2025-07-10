@@ -31,6 +31,10 @@ public:
 
 	// Called every frame
 	virtual void Tick(float DeltaTime) override;
+
+	void HandleDestruction();
+
+	APlayerController* GetTankPlayerController() const {return TankPlayerController;}
 	
 protected:
 	// Called when the game starts or when spawned
@@ -53,6 +57,6 @@ private:
 	void Move(float Value);
 	void Turn(float Value2);
 
-	APlayerController* PlayerControllerRef;
+	APlayerController* TankPlayerController;
 	
 };
