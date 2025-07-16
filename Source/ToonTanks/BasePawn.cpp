@@ -48,7 +48,8 @@ void ABasePawn::Fire()
 {
 	FVector ProjectileSpawnPointLocation = ProjectileSpawnPoint -> GetComponentLocation();
 
-	DrawDebugSphere(GetWorld(), ProjectileSpawnPointLocation, 25.f, 12, FColor::Red, false, 3.f);
+	// DrawDebugSphere when at the end of the barrel for all pawns 
+	//DrawDebugSphere(GetWorld(), ProjectileSpawnPointLocation, 25.f, 12, FColor::Red, false, 3.f);
 
 	FVector Location = ProjectileSpawnPoint->GetComponentLocation();
 	FRotator Rotation = ProjectileSpawnPoint->GetComponentRotation();
